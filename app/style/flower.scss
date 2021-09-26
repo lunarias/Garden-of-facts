@@ -13,4 +13,75 @@
 
 .stem{}
 
+.flower {
+    width: 20px;
+    height: 32px;
+    border: 3px solid #555869;
+    border-radius: 50%;
+    position: absolute;
 
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 26px;
+        border: 3px solid #555869;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    &:after {
+        left: -10px;
+        bottom: -4px;
+        transform: rotate(-25deg);
+        animation: flower-left 1s infinite linear;
+    }
+
+    &:before {
+        right: -10px;
+        bottom: -4px;
+        transform: rotate(25deg);
+        animation: flower-right 1s infinite linear;
+    }
+
+    &.-flower1 {
+        background-color: #F7D2C9;
+        left: 50px;
+        top: 70px;
+    }
+
+    &.-flower2 {
+        background-color: #87BDC1;
+        top: 80px;
+        left: 100px;
+    }
+
+    &.-flower3 {
+        background-color: #D8778A;
+        top: 55px;
+        left: 150px;
+    }
+}
+
+.plant {
+    width: 3px;
+    height: 75px;
+    background-color: #555869;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 7px;
+        border: 3px solid #555869;
+        border-radius: 50%;
+        top: 20px;
+        animation: plant 2s infinite linear;
+    }
+}
