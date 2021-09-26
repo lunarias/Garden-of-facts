@@ -23,7 +23,8 @@ gulp.task('serve', function() {
       'app/*/*.html',
       'app/images/**/*',
       'app/scripts/**/*.js',
-      'app/styles/*.css',
+      'app/style/*.css',
+      'app/style/*.scss',
       'app/pages/*.html'
     ]).on('change',reload);
 });
