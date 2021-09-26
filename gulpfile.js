@@ -44,7 +44,9 @@ gulp.task('serve', function () {
         var gulpRes = gulp.src('app/style/*.scss')
             .pipe(concat('combined.scss'))
             .pipe(sass().on('error', sass.logError))
-            .pipe(gulp.dest('app/style/cssDist/'));
-        reload();
+            .pipe(gulp.dest('app/style/cssDist/'))
+            .pipe(browserSync.reload({
+                stream: true
+            }))
     });
 });
