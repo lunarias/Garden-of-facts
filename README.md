@@ -1,6 +1,9 @@
 ### Install node modules using
 `npm install`
 
+### Install gulp-cli for the command line
+`npm install --global gulp-cli`
+
 ### Run with (for dev)
 `gulp serve`
 OR
