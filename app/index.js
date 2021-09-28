@@ -1,9 +1,9 @@
 
 
 $(document).ready(function () {
-    $(".seed").hide();
-    $(".leaf").hide();
-    $(".flower-bud").hide();
+    // $(".seed").hide();
+    // $(".leaf").hide();
+    // $(".flower-bud").hide();
     $("#modal-close").click(function(){
         $("#modal").modal("hide");
     })
