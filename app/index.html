@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 
 <html lang="en">
-      <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title> Garden of Facts</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Garden of Facts</title>
 
-             <!-- Fonts -->
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-            <link rel="stylesheet" href="style/cssDist/combined.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="style/cssDist/combined.css">
 
-            <!-- Add icon library -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
-            
-            <!-- Load font awesome icons -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
 
-      </head>
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
 
       <body>
-            <h1>Hello world!</h1>
-            <!-- Example icon -->
-<!--            <div> 
-                  <i class="fas fa-th fa-lg"></i>
-            </div>
--->
-            <div class="flower -flower1">
-                <div class="plant"></div>
-            </div>            
-          <div class="flower -flower2">
-                <div class="plant"></div>
-            </div>            
-          <div class="flower -flower3">
-                <div class="plant">
-                    <div class="leaf"></div>
-
+          <div id="flowers-container" style="position:absolute;top:25%;left:25%">
+            <div style="position:relative;border:black solid 1px;height:500px;width:700px;">
+                <button id="grow-btn-1" style="position:absolute;bottom: 0px;left:50px;">grow</button>
+                <button id="grow-btn-2" style="position:absolute;bottom: 0px;left:220px;">grow</button>
+                <button id="grow-btn-3" style="position:absolute;bottom: 0px;left:400px;">grow</button>
+                <button id="grow-btn-4" style="position:absolute;bottom: 0px;left:580px;">grow</button>
+                <div class="flower -flower1">
+                    <div class="flower-bud -flower1"></div>
+                    <div class="plant">
+                        <div class="leaf leaf-left" style="top:80px;"></div>
+                        <div class="leaf leaf-right" style="top:80px;"></div>
+                        <div class="leaf leaf-right" style="top:150px;"></div>
+                        <div class="leaf leaf-left" style="top:170px;"></div>
+                    </div>
+                </div>
+                <div class="flower -flower2">
+                    <div class="flower-bud -flower2"></div>
+                    <div class="plant">
+                        <div class="leaf leaf-left" style="top:80px;"></div>
+                        <div class="leaf leaf-right" style="top:100px;"></div>
+                        <div class="leaf leaf-right" style="top:160px;"></div>
+                        <div class="leaf leaf-left" style="top:170px;"></div>
+                    </div>
+                </div>
+                <div class="flower -flower3">
+                    <div class="flower-bud -flower3"></div>
+                    <div class="plant">
+                        <div class="leaf leaf-left" style="top:80px;"></div>
+                        <div class="leaf leaf-right" style="top:100px;"></div>
+                        <div class="leaf leaf-right" style="top:160px;"></div>
+                        <div class="leaf leaf-left" style="top:170px;"></div>
+                    </div>
+                </div>
+                <div class="flower -flower4">
+                    <div class="flower-bud -flower4"></div>
+                    <div class="plant">
+                        <div class="leaf leaf-left" style="top:80px;"></div>
+                        <div class="leaf leaf-right" style="top:100px;"></div>
+                        <div class="leaf leaf-right" style="top:160px;"></div>
+                        <div class="leaf leaf-left" style="top:170px;"></div>
+                    </div>
                 </div>
             </div>
-
-
-<!--            <div id = "flower-1"></div>
-                  <div class="flower-wrapper">
-
-                  </div>
-            <div id = "flower-2"></div>
-            <div id = "flower-3"></div>
-            <div id = "flower-4"></div>-->
+          </div>
 
             <script src="index.js"></script>
       </body>
