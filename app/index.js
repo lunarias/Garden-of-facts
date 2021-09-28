@@ -4,13 +4,24 @@ $(document).ready(function () {
     $(".seed").hide();
     $(".leaf").hide()
     $(".flower-bud").hide()
+    seedEvents()
 
+    $(".flower-bud").click(function () {
+        console.log("be the flower")
+    })
+    $(".leaf").click(function () {
+        console.log("be the leaf")
+    })
+})
+
+
+function seedEvents() {
     $('#seed-spot-1').click(function () {
         var seed = $("#seed-1")
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-1").css("left",seed.offset().left -15)
+            $("#flower-1").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower1"))
             $(this).unbind()
         }
@@ -21,7 +32,7 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-2").css("left", seed.offset().left -15)
+            $("#flower-2").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower2"))
             $(this).unbind()
         }
@@ -32,7 +43,7 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-3").css("left", seed.offset().left-15)
+            $("#flower-3").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower3"))
             $(this).unbind()
         }
@@ -43,12 +54,12 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-4").css("left", seed.offset().left-15)
+            $("#flower-4").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower4"))
             $(this).unbind()
         }
     })
-})
+}
  
 function growPlantAnimation(flowerContainer) {
     flowerContainer.find(".plant")

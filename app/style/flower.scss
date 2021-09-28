@@ -79,7 +79,7 @@
         background-color: #D8778A;
     }    
     &.-flower4 {
-        background-color: #D8778A;
+        background-color: #EDE4A4;
     }
 }
 
@@ -90,7 +90,6 @@
     bottom:-320px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: -1;
 }
 
 .grow-stem {
@@ -102,16 +101,16 @@
 .leaf {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 18px;
-    border: 3px solid #555869;
+    width: 45px;
+    height: 24px;
+    border: 4px solid #555869;
     border-radius: 50%;
     top: 70px;
-/*    animation: plant 2s infinite linear;*/
+    cursor:pointer;
 }
 
 .leaf-left {
-    left: -32px;
+    left: -44px;
     animation: leaf-left 2s infinite linear;
 }
 
