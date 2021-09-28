@@ -18,7 +18,8 @@
   height: 140px;
   border: 4px solid #555869;
   border-radius: 50%;
-  position: absolute; }
+  position: absolute;
+  cursor: pointer; }
   .flower-bud:after, .flower-bud:before {
     content: '';
     position: absolute;
@@ -44,7 +45,7 @@
   .flower-bud.-flower3 {
     background-color: #D8778A; }
   .flower-bud.-flower4 {
-    background-color: #D8778A; }
+    background-color: #EDE4A4; }
 
 .plant {
   width: 4px;
@@ -141,7 +142,6 @@
 .page-wrapper {
   width: 100vw;
   height: 100vh;
-  color: red;
   display: flex;
   justify-content: center; }
 

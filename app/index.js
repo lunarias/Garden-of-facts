@@ -2,21 +2,51 @@
 
 $(document).ready(function () {
     $(".seed").hide();
-    $(".leaf").hide()
-    $(".flower-bud").hide()
-    seedEvents()
+    $(".leaf").hide();
+    $(".flower-bud").hide();
+    $("#modal-close").click(function(){
+        $("#modal").modal('hide');
+    })
+    
+    seedEvents();
+    addPlantPopups("#flower-1", "Hardeep");
+    addPlantPopups("#flower-2", "Jessie");
+    addPlantPopups("#flower-3", "Kim");
+    addPlantPopups("#flower-4", "Shaina");   
+    
 
     $(".flower-bud").click(function () {
         console.log("be the flower")
     })
-    $(".leaf").click(function () {
-        console.log("be the leaf")
-    })
 })
 
 
+function addPlantPopups(flowerID, name){
+
+    //Load all leaf popups
+    for (let i=1; i < 5; i++){
+        $(flowerID + " #fact-" + i).click(function(){
+            $('.modal-body').load("./facts/" + name + "/fact"+ i + ".html",function(){
+                var title = $('#fact-header').text();    
+                $(".modal-header #modal-title").text(title);
+                $('#modal').modal('show');
+            });
+        })
+    }
+
+    //Final flower bud popup
+    $(flowerID + " .flower-bud").click(function(){
+        $('.modal-body').load("./facts/" + name + "/fact5.html",function(){
+            var title = $('#fact-header').text();    
+            $(".modal-header #modal-title").text(title);
+            $('#modal').modal('show');
+        });
+    })
+
+}
+
 function seedEvents() {
-    $('#seed-spot-1').click(function () {
+    $('#seed-spot-1').click(function () {        
         var seed = $("#seed-1")
         if (!seed.is(":visible")) {
             seed.fadeIn();
