@@ -2,42 +2,51 @@
 
 $(document).ready(function () {
     $(".seed").hide();
-
-    $('#seed-spot-1').click(function () {
-        $("#seed-1").fadeIn();
-    })
-
-    $('#seed-spot-2').click(function () {
-        $("#seed-2").fadeIn();
-    })
-
-    $('#seed-spot-3').click(function () {
-        $("#seed-3").fadeIn();
-    })
-
-    $('#seed-spot-4').click(function () {
-        $("#seed-4").fadeIn();
-    })
-
-    console.log('hello')
     $(".leaf").hide()
     $(".flower-bud").hide()
 
-    $("#grow-btn-1").click(function () {
-        growPlantAnimation($(".-flower1"))
-        $(this).unbind()
+    $('#seed-spot-1').click(function () {
+        var seed = $("#seed-1")
+        if (!seed.is(":visible")) {
+            seed.fadeIn();
+        } else {
+            $("#flower-1").css("left",seed.offset().left -15)
+            growPlantAnimation($(".-flower1"))
+            $(this).unbind()
+        }
     })
-    $("#grow-btn-2").click(function () {
-        growPlantAnimation($(".-flower2"))
-        $(this).unbind()
+
+    $('#seed-spot-2').click(function () {
+        var seed = $("#seed-2")
+        if (!seed.is(":visible")) {
+            seed.fadeIn();
+        } else {
+            $("#flower-2").css("left", seed.offset().left -15)
+            growPlantAnimation($(".-flower2"))
+            $(this).unbind()
+        }
     })
-    $("#grow-btn-3").click(function () {
-        growPlantAnimation($(".-flower3"))
-        $(this).unbind()
+
+    $('#seed-spot-3').click(function () {
+        var seed = $("#seed-3")
+        if (!seed.is(":visible")) {
+            seed.fadeIn();
+        } else {
+            $("#flower-3").css("left", seed.offset().left-15)
+            growPlantAnimation($(".-flower3"))
+            $(this).unbind()
+        }
     })
-    $("#grow-btn-4").click(function () {
-        growPlantAnimation($(".-flower4"))
-        $(this).unbind()
+
+    $('#seed-spot-4').click(function () {
+        var seed = $("#seed-4")
+        if (!seed.is(":visible")) {
+            seed.fadeIn();
+        } else {
+            $("#flower-4").css("left", seed.offset().left-15)
+            growPlantAnimation($(".-flower4"))
+            $(this).unbind()
+        }
     })
 })
  
