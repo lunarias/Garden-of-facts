@@ -5,7 +5,7 @@ $(document).ready(function () {
     $(".leaf").hide();
     $(".flower-bud").hide();
     $("#modal-close").click(function(){
-        $("#modal").modal('hide');
+        $("#modal").modal("hide");
     })
     
     seedEvents();
@@ -26,69 +26,41 @@ function addPlantPopups(flowerID, name){
     //Load all leaf popups
     for (let i=1; i < 5; i++){
         $(flowerID + " #fact-" + i).click(function(){
-            $('.modal-body').load("./facts/" + name + "/fact"+ i + ".html",function(){
-                var title = $('#fact-header').text();    
+            $(".modal-body").load("./facts/" + name + "/fact"+ i + ".html",function(){
+                var title = $("#fact-header").text();    
                 $(".modal-header #modal-title").text(title);
-                $('#modal').modal('show');
+                $("#modal").modal("show");
             });
         })
     }
 
     //Final flower bud popup
     $(flowerID + " .flower-bud").click(function(){
-        $('.modal-body').load("./facts/" + name + "/fact5.html",function(){
-            var title = $('#fact-header').text();    
+        $(".modal-body").load("./facts/" + name + "/fact5.html",function(){
+            var title = $("#fact-header").text();    
             $(".modal-header #modal-title").text(title);
-            $('#modal').modal('show');
+            $("#modal").modal("show");
         });
     })
 
 }
 
 function seedEvents() {
-    $('#seed-spot-1').click(function () {        
-        var seed = $("#seed-1")
-        if (!seed.is(":visible")) {
-            seed.fadeIn();
-        } else {
-            $("#flower-1").css("left", seed.offset().left - 20)
-            growPlantAnimation($(".-flower1"))
-            $(this).unbind()
-        }
-    })
 
-    $('#seed-spot-2').click(function () {
-        var seed = $("#seed-2")
-        if (!seed.is(":visible")) {
-            seed.fadeIn();
-        } else {
-            $("#flower-2").css("left", seed.offset().left - 20)
-            growPlantAnimation($(".-flower2"))
-            $(this).unbind()
-        }
-    })
+    //Generate all seed click events
+    for (let i=1; i < 5; i++){
+        $("#seed-spot-"+i).click(function () {        
+            var seed = $("#seed-"+i)
+            if (!seed.is(":visible")) {
+                seed.fadeIn();
+            } else {
+                $("#flower-"+i).css("left", seed.offset().left - 20)
+                growPlantAnimation($(".-flower"+i))
+                $(this).unbind()
+            }
+        })
 
-    $('#seed-spot-3').click(function () {
-        var seed = $("#seed-3")
-        if (!seed.is(":visible")) {
-            seed.fadeIn();
-        } else {
-            $("#flower-3").css("left", seed.offset().left - 20)
-            growPlantAnimation($(".-flower3"))
-            $(this).unbind()
-        }
-    })
-
-    $('#seed-spot-4').click(function () {
-        var seed = $("#seed-4")
-        if (!seed.is(":visible")) {
-            seed.fadeIn();
-        } else {
-            $("#flower-4").css("left", seed.offset().left - 20)
-            growPlantAnimation($(".-flower4"))
-            $(this).unbind()
-        }
-    })
+    } 
 }
  
 function growPlantAnimation(flowerContainer) {
