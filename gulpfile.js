@@ -33,7 +33,7 @@ gulp.task('serve', function () {
         'app/*.js',
         'app/*.html',
         'app/*/*.html',
-        'app/images/**/*',
+        'app/facts/*/*.html',
         'app/scripts/**/*.js',
         'app/style/*.css',
         'app/pages/*.html'
