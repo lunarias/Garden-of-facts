@@ -2,15 +2,56 @@
 
 $(document).ready(function () {
     $(".seed").hide();
-    $(".leaf").hide()
-    $(".flower-bud").hide()
+    $(".leaf").hide();
+    $(".flower-bud").hide();
+    $("#modal-close").click(function(){
+        $("#modal").modal('hide');
+    })
+    
+    seedEvents();
+    addPlantPopups("#flower-1", "Hardeep");
+    addPlantPopups("#flower-2", "Jessie");
+    addPlantPopups("#flower-3", "Kim");
+    addPlantPopups("#flower-4", "Shaina");   
+    
 
-    $('#seed-spot-1').click(function () {
+    $(".flower-bud").click(function () {
+        console.log("be the flower")
+    })
+})
+
+
+function addPlantPopups(flowerID, name){
+
+    //Load all leaf popups
+    for (let i=1; i < 5; i++){
+        $(flowerID + " #fact-" + i).click(function(){
+            $('.modal-body').load("./facts/" + name + "/fact"+ i + ".html",function(){
+                var title = $('#fact-header').text();    
+                $(".modal-header #modal-title").text(title);
+                $('#modal').modal('show');
+            });
+        })
+    }
+
+    //Final flower bud popup
+    $(flowerID + " .flower-bud").click(function(){
+        $('.modal-body').load("./facts/" + name + "/fact5.html",function(){
+            var title = $('#fact-header').text();    
+            $(".modal-header #modal-title").text(title);
+            $('#modal').modal('show');
+        });
+    })
+
+}
+
+function seedEvents() {
+    $('#seed-spot-1').click(function () {        
         var seed = $("#seed-1")
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-1").css("left",seed.offset().left -15)
+            $("#flower-1").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower1"))
             $(this).unbind()
         }
@@ -21,7 +62,7 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-2").css("left", seed.offset().left -15)
+            $("#flower-2").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower2"))
             $(this).unbind()
         }
@@ -32,7 +73,7 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-3").css("left", seed.offset().left-15)
+            $("#flower-3").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower3"))
             $(this).unbind()
         }
@@ -43,12 +84,12 @@ $(document).ready(function () {
         if (!seed.is(":visible")) {
             seed.fadeIn();
         } else {
-            $("#flower-4").css("left", seed.offset().left-15)
+            $("#flower-4").css("left", seed.offset().left - 20)
             growPlantAnimation($(".-flower4"))
             $(this).unbind()
         }
     })
-})
+}
  
 function growPlantAnimation(flowerContainer) {
     flowerContainer.find(".plant")

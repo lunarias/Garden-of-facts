@@ -18,7 +18,8 @@
   height: 140px;
   border: 4px solid #555869;
   border-radius: 50%;
-  position: absolute; }
+  position: absolute;
+  cursor: pointer; }
   .flower-bud:after, .flower-bud:before {
     content: '';
     position: absolute;
@@ -44,7 +45,7 @@
   .flower-bud.-flower3 {
     background-color: #D8778A; }
   .flower-bud.-flower4 {
-    background-color: #D8778A; }
+    background-color: #EDE4A4; }
 
 .plant {
   width: 4px;
@@ -52,8 +53,7 @@
   position: absolute;
   bottom: -320px;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: -1; }
+  transform: translateX(-50%); }
 
 .grow-stem {
   animation: growStem 2s ease-in-out;
@@ -62,15 +62,15 @@
 .leaf {
   content: '';
   position: absolute;
-  width: 30px;
-  height: 18px;
-  border: 3px solid #555869;
+  width: 45px;
+  height: 24px;
+  border: 4px solid #555869;
   border-radius: 50%;
   top: 70px;
-  /*    animation: plant 2s infinite linear;*/ }
+  cursor: pointer; }
 
 .leaf-left {
-  left: -32px;
+  left: -44px;
   animation: leaf-left 2s infinite linear; }
 
 .leaf-right {
@@ -136,12 +136,12 @@
   border-radius: 5px;
   bottom: 80px;
   position: absolute;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 5; }
 
 .page-wrapper {
   width: 100vw;
   height: 100vh;
-  color: red;
   display: flex;
   justify-content: center; }
 
