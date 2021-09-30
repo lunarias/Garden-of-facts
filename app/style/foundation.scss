@@ -76,9 +76,6 @@ $garden-box-bottom: 80px;
     cursor: pointer;
 }
 
-
-
-
 .ground{
     width:100vw;
     height:100px;
@@ -88,4 +85,15 @@ $garden-box-bottom: 80px;
     bottom: 0;
     position:absolute;
     margin: 0 auto;    
+}
+
+
+.name-title{
+    font-size:20px;
+    font-weight:600;
+    color: white;
+    position:relative;
+    margin-right:1%;
+    top:-30px;   
+
 }
