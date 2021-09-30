@@ -20,12 +20,22 @@ $(document).ready(function () {
     })
 })
 
+var flowerColor = (flowerID) => {
+    switch (flowerID) {
+        case "#flower-1": return "#F7D2C9"; break;
+        case "#flower-2": return "#87BDC1"; break;
+        case "#flower-3": return "#D8778A"; break;
+        case "#flower-4": return "#EDE4A4"; break;
+    }
+}
+
 
 function addPlantPopups(flowerID, name){
 
     //Load all leaf popups
     for (let i=1; i < 5; i++){
-        $(flowerID + " #fact-" + i).click(function(){
+        $(flowerID + " #fact-" + i).click(function () {
+            $(this).css("background-color","#81D681")
             $(".modal-body").load("./facts/" + name + "/fact"+ i + ".html",function(){
                 var title = $("#fact-header").text();    
                 $(".modal-header #modal-title").text(title);
@@ -35,7 +45,9 @@ function addPlantPopups(flowerID, name){
     }
 
     //Final flower bud popup
-    $(flowerID + " .flower-bud").click(function(){
+    $(flowerID + " .flower-bud").click(function () {
+        $(this).css("background-color", flowerColor(flowerID))
+
         $(".modal-body").load("./facts/" + name + "/fact5.html",function(){
             var title = $("#fact-header").text();    
             $(".modal-header #modal-title").text(title);
