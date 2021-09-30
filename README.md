@@ -12,3 +12,9 @@ OR
 
 ### gulp settings (gulpfile.js)
 add/edit files in directories included for gulp.watch. Will watch these files for changes and update/refresh the webserver while it is running
+
+### References
+
+Flower design and animations:
+https://codepen.io/opheliafl/pen/zzLbzQ
+
