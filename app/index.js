@@ -32,9 +32,13 @@ var flowerColor = (flowerID) => {
 
 function addPlantPopups(flowerID, name){
 
+    const rustle = new Audio("./sound/leaf-rustle.mp3");   
+    const chime = new Audio("./sound/chime.mp3");   
+
     //Load all leaf popups
     for (let i=1; i < 5; i++){
         $(flowerID + " #fact-" + i).click(function () {
+            rustle.play();
             $(this).css("background-color", "#81D681")
             $(this).find(".fact-icon").fadeIn()
             $(".modal-body").load("./facts/" + name + "/fact"+ i + ".html",function(){
@@ -48,7 +52,7 @@ function addPlantPopups(flowerID, name){
     //Final flower bud popup
     $(flowerID + " .flower-bud").click(function () {
         $(this).css("background-color", flowerColor(flowerID))
-
+        chime.play()
         $(".modal-body").load("./facts/" + name + "/fact5.html",function(){
             var title = $("#fact-header").text();    
             $(".modal-header #modal-title").text(title);
@@ -62,11 +66,17 @@ function seedEvents() {
 
     //Generate all seed click events
     for (let i=1; i < 5; i++){
-        $("#seed-spot-"+i).click(function () {        
+        $("#seed-spot-"+i).click(function () {   
+            
             var seed = $("#seed-"+i)
             if (!seed.is(":visible")) {
+                const audio = new Audio("./sound/add-seed.mp3");   
+                audio.play();       
                 seed.fadeIn();
+                
             } else {
+                const audio = new Audio("./sound/water.mp3");   
+                audio.play();
                 $("#flower-"+i).css("left", seed.offset().left - 20)
                 growPlantAnimation($(".-flower"+i))
                 $(this).unbind()
