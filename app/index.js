@@ -35,7 +35,8 @@ function addPlantPopups(flowerID, name){
     //Load all leaf popups
     for (let i=1; i < 5; i++){
         $(flowerID + " #fact-" + i).click(function () {
-            $(this).css("background-color","#81D681")
+            $(this).css("background-color", "#81D681")
+            $(this).find(".fact-icon").fadeIn()
             $(".modal-body").load("./facts/" + name + "/fact"+ i + ".html",function(){
                 var title = $("#fact-header").text();    
                 $(".modal-header #modal-title").text(title);
